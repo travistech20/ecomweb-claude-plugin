@@ -70,6 +70,19 @@ for (const file of walk(path.join(root, pluginDir))) {
   }
 }
 
+// A command must never start a long-running server: Claude Code's shell would
+// block on it, then kill it. The user runs pnpm dev themselves.
+for (const name of commands) {
+  const text = readFileSync(path.join(commandsDir, name), "utf8");
+  if (/storefront init[^\n`]*--dev\b/.test(text)) fail(`commands/${name}: must not pass --dev to storefront init`);
+}
+// There is no browser login: nothing may promise one.
+for (const file of walk(path.join(root, pluginDir)).filter((f) => f.endsWith(".md"))) {
+  if (/opens the browser|logs (you|them) in/i.test(readFileSync(file, "utf8"))) {
+    fail(`${path.relative(root, file)}: promises a browser login that doesn't exist`);
+  }
+}
+
 if (problems.length) {
   console.error(problems.map((p) => `- ${p}`).join("\n"));
   process.exit(1);

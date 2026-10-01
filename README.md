@@ -11,11 +11,20 @@ In Claude Code:
 /plugin install ecomweb@ecomweb
 ```
 
+## Before you start
+
+Log in to ecomweb once, in your own terminal (keep your key out of chats):
+create an API key for your store in the ecomweb dashboard, then
+
+```bash
+npx @ecomweb/cli auth login --api-key <your key>
+```
+
 ## Use
 
 | Command | What it does |
 |---|---|
-| `/ecomweb:new [store]` | Checks Node 24, pnpm and git; logs you in to ecomweb; picks your store; creates the storefront project (here or as a new GitHub repository); installs and starts it on http://localhost:3002. |
+| `/ecomweb:new [store]` | Checks Node 24, pnpm and git and your ecomweb login; picks your store; creates and installs the storefront project (here or as a new GitHub repository). Then run `pnpm dev` in it for http://localhost:3002. |
 | `/ecomweb:check` | In a storefront project: runs `pnpm check`, then reviews the pages against the project skill's quality checklist. |
 | `/ecomweb:update` | In a storefront project: updates the project's ecomweb skill, the storefront kit and the SDK, then runs `pnpm check`. |
 
