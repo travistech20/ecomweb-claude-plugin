@@ -11,13 +11,13 @@ steps in order, telling the user briefly what each one does.
      the install links: https://nodejs.org (Node), https://pnpm.io/installation
      (pnpm), https://git-scm.com/downloads (git).
 2. **Log in.** Run `npx -y @ecomweb/cli auth status`. If the user isn't logged
-   in, ask them to do it themselves, outside this chat, so their key never
-   enters it: create an API key for their store in the ecomweb dashboard, then
-   run `npx @ecomweb/cli auth login --api-key <key>` in their own terminal.
-   Wait until they say it's done, then check `auth status` again.
-3. **Pick the store.** If `$ARGUMENTS` names a store ref, use it. Otherwise run
-   `npx -y @ecomweb/cli stores list`, show the stores (name and ref), and ask
-   which one.
+   in, ask for their ecomweb email and run
+   `npx -y @ecomweb/cli auth login --email <email>`: it emails them a 6-digit
+   code. Ask for the code, then run
+   `npx -y @ecomweb/cli auth login --email <email> --code <code> [--store-ref <ref>]`.
+   If it answers `STORE_REQUIRED`, show the stores it lists and ask which one.
+3. **The store.** The login selected it; if `$ARGUMENTS` names a different store
+   ref, use that one in step 5.
 4. **Where.** Ask: "Create the project on this machine, or as a new private
    GitHub repository (cloned here)?"
 5. **Create it.** Run
@@ -35,4 +35,5 @@ steps in order, telling the user briefly what each one does.
      best-selling products, in my brand colours", "Redesign the product page
      for phones with my real photos", "Add a size guide to product pages".
 
-Never paste API keys or tokens into the chat or into files.
+The emailed code may be typed into the chat (it works once, for minutes). Never
+ask for API keys or tokens, and never write them into files.

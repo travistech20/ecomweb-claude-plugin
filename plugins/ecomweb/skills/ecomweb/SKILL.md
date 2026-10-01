@@ -19,8 +19,8 @@ project. Use the project's own `ecomweb-storefront` skill
 
 1. Prerequisites: Node.js 24 or newer, pnpm, git. Check with
    `node --version`, `pnpm --version`, `git --version`.
-2. Run `/ecomweb:new`. It checks the ecomweb login (the user logs in once, in
-   their own terminal, with an API key from the dashboard), picks the store,
+2. Run `/ecomweb:new`. It checks the ecomweb login (an emailed 6-digit code, no
+   API key), picks the store,
    and creates and installs the project (on this machine or as a new GitHub
    repository).
 3. Then restart Claude Code inside the new folder so the project's skill
