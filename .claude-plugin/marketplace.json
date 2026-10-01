@@ -1,0 +1,16 @@
+{
+  "name": "ecomweb",
+  "owner": {
+    "name": "ecomweb"
+  },
+  "metadata": {
+    "description": "ecomweb's Claude Code plugins: build your ecomweb store's storefront with Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "ecomweb",
+      "source": "./plugins/ecomweb",
+      "description": "Build your ecomweb storefront with Claude Code"
+    }
+  ]
+}

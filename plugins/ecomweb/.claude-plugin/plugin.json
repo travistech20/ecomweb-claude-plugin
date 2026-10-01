@@ -1,0 +1,8 @@
+{
+  "name": "ecomweb",
+  "version": "0.1.0",
+  "description": "Build your ecomweb storefront with Claude Code: create the project for your store, check it, keep it up to date.",
+  "author": { "name": "ecomweb" },
+  "homepage": "https://github.com/travistech20/ecomweb-claude-plugin",
+  "license": "MIT"
+}
