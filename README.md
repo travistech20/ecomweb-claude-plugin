@@ -15,7 +15,7 @@ In Claude Code:
 
 | Command | What it does |
 |---|---|
-| `/ecomweb:new [store]` | Checks Node 24, pnpm and git; logs in to ecomweb with a code emailed to you (no API key); picks your store; creates and installs the storefront project (here or as a new GitHub repository). Then run `pnpm dev` in it for http://localhost:3002. |
+| `/ecomweb:new [store]` | Checks Node 24, pnpm and git; logs you in to ecomweb by approving it in your browser (no API key); picks your store; creates and installs the storefront project (here or as a new GitHub repository). Then run `pnpm dev` in it for http://localhost:3002. |
 | `/ecomweb:check` | In a storefront project: runs `pnpm check`, then reviews the pages against the project skill's quality checklist. |
 | `/ecomweb:update` | In a storefront project: updates the project's ecomweb skill, the storefront kit and the SDK, then runs `pnpm check`. |
 
