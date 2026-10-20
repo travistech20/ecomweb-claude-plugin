@@ -1,6 +1,10 @@
 # ecomweb for Claude Code
 
 Build your ecomweb store's storefront with [Claude Code](https://claude.com/claude-code).
+This repo is a Claude Code plugin marketplace (`.claude-plugin/marketplace.json`)
+with one plugin, `ecomweb` (`plugins/ecomweb/`): three slash commands
+(`commands/`) and an `ecomweb` skill (`skills/ecomweb/`) that steers Claude to
+`/ecomweb:new` when someone wants to start a storefront.
 
 ## Install
 
@@ -32,4 +36,7 @@ project's `docs/start-with-codex.md`.
 
 ## Development
 
-`npm test` checks the marketplace and plugin structure.
+`npm test` (`scripts/validate.mjs`) checks the marketplace and plugin
+structure; `validate.yml` runs it on every pull request and push to `main`.
+There is no build or publish step: Claude Code installs the plugin straight
+from this repo, so what is on `main` is what users get.
